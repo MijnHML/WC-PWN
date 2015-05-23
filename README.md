@@ -1,8 +1,8 @@
 # WC-PWN
 Get decrypted (clear-text) password from remote PC's in active directory.
 
-#####How to use:
 ---
+#####How to use:
 1. Open wcpwn.bat
 2. Type the name of the remote computer and press enter
 3. Wait
