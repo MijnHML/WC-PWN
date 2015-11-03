@@ -4,13 +4,7 @@ set rcarc=%2
 if NOT "%1" == "" goto wc
 :begin
 cls
-echo    __      _____________________                
-echo   /  \    /  \_   ___ \______   \__  _  ______  
-echo   \   \/\/   /    \  \/^|     ___/\ \/ \/ /    \ 
-echo    \        /\     \___^|    ^|     \     /   ^|  \
-echo     \__/\  /  \______  /____^|      \/\_/^|___^|  /
-echo          \/          \/                      \/ 
-echo.
+echo     __      _____________________ & echo.   /  \    /  \_   ___ \______   \__  _  ______  & echo.   \   \/\/   /    \  \/^|     ___/\ \/ \/ /    \ & echo.    \        /\     \___^|    ^|     \     /   ^|  \ & echo.     \__/\  /  \______  /____^|      \/\_/^|___^|  / & echo.          \/          \/                      \/ & echo.
 set /p rc=Computer to steal passwords from:
 :goback
 set /p rcarc=Is this computer 32 or 64 bit: 
